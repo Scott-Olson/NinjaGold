@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ninja Gold</title>
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+	<div id='wrapper'>
+		<h1>ninja gold.</h1>
+		<h4>Your gold: {{session['yourGold']}}</h4>
+		<div id="formWrap">
+		{% for playObj in formDB: %}
+			<form action="/processMoney" method="post">
+				 {{playObj['value']}}<br>
+				 <p>Get {{playObj['lowVal']}} - {{playObj['highVal']}}</p>
+				<input type="hidden" name="building" value={{playObj['value']}}>
+				<input type="submit" value="Find Gold!"/>
+			</form>
+		{% endfor %}
+			<a href="/reset">New Game</a>
+		</div>
+		<div id="listWrapper">
+			<h3>Activities:</h3>
+			<ul>
+			{% for keyVal in range(actions|length) %}
+				<li class="{{actions[keyVal]['gainLoss']}}">Gold from {{actions[keyVal]['building']}} changed by {{actions[keyVal]['credit']}}</li>
+			{% endfor %}
+			</ul>
+		</div>
+	</div>
+	
+</body>
+</html>

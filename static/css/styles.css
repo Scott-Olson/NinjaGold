@@ -1,0 +1,50 @@
+*{
+	margin: 0px;
+	padding: 0px;
+}
+a{
+	display: block;
+}
+#wrapper{
+	display: inline-block;
+	text-align: center;
+}
+#formWrap{
+	height: 200px;
+	width: 300px;
+	display: inline-block;
+	border: 1px solid black;
+	vertical-align: top;
+}
+
+#listWrapper{
+	height: 190px;
+	width: 250px;
+	display: inline-block;
+	border: 1px solid blue;
+	text-align: left;
+	padding: 5px 7px;
+}
+
+
+form{
+	width: 125px;
+	display: inline-block;
+	vertical-align: top;
+	margin-bottom: 10px;
+}
+
+ul{
+	height: 150px;
+	overflow: auto;
+}
+
+.loss{
+	color:red;
+}
+.gain{
+	color:green;
+}
+.broke{
+	color:black;
+}
